@@ -44,17 +44,32 @@
   .card-container .card:not(.highlight-card):hover .material-icons path {
     fill: rgb(105, 103, 103);
   }
+  .badge-lg {
+    padding: .85em 1.375em;
+}
 
-  .card.highlight-card {
-    background-color: #1976d2;
+.badge {
+    text-transform: uppercase;
+}
+.badge-danger {
+    color: #ffff;
+    background-color: #f5365c;
+
+}
+.badge-success {
     color: white;
+    background-color: #1aae6f;
+}
+.badge {
+    font-size: 66%;
     font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
+    line-height: 1;
+    display: inline-block;
+    padding: .35rem .375rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border-radius: .375rem;
+    width:100px !important;
+}

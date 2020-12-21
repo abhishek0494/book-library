@@ -15,13 +15,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// let books=JSON.parse(fs.readFileSync('./books.json'))
-// books=books.map(el=>{
-//     el.count=Math.floor(Math.random() * 10) + 1;
-//     return el
-// })
-// fs.writeFileSync('books1.json',JSON.stringify(books))
-
 app.get('/books', (req, res) => {
 let books=fs.readFileSync('./books1.json')
   res.json(JSON.parse(books))

@@ -8,21 +8,21 @@ export class BooksService {
   constructor(private http: HttpClient) {}
 
   getAll() {
-    return this.http.get('http://localhost:4000/books');
+    return this.http.get('/books');
   }
   getAllCategories(){
-    return this.http.get('http://localhost:4000/books/categories')
+    return this.http.get('/books/categories')
   }
   searchByCategory(category){
-    return this.http.get(`http://localhost:4000/books/categories/${category}`)
+    return this.http.get(`/books/categories/${category}`)
   }
   searchBook(searchTerm){
-    return this.http.get(`http://localhost:4000/books/search/${searchTerm}`)
+    return this.http.get(`/books/search/${searchTerm}`)
   }
   addBook(bookObj){
-    return this.http.post(`http://localhost:4000/addbook`,bookObj)
+    return this.http.post(`/addbook`,bookObj)
   }
   removeBook(id){
-    return this.http.post(`http://localhost:4000/remove/book/${id}`,{})
+    return this.http.post(`/remove/book/${id}`,{})
   }
 }

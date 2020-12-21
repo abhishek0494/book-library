@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,7 +13,7 @@ import { BooksComponent } from './components/books/books.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookformComponent } from './components/bookform/bookform.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-
+import { HttpsInterceptor } from './service/http-interceptor.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,11 @@ import { CategoriesComponent } from './components/categories/categories.componen
     StoreModule.forRoot({books: BookReducer}),
     EffectsModule.forRoot([bookEffects])
   ],
-  providers: [BooksService],
+  providers: [BooksService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpsInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
