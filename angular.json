@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "book-library"
+  "defaultProject": "book-library",
+  "cli": {
+    "analytics": false
+  }
 }

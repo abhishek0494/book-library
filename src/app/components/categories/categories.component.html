@@ -1,0 +1,10 @@
+<button class="btn btn-primary" (click)="toggleCategory()" style="float: right;position: absolute;
+right: 0;"><em class="fas fa-th"></em> Browse By Category</button>
+<button *ngIf="selected.length>1" class="btn btn-primary" (click)="removeFilter()" style="float: left;position: absolute;
+right: 100;"><em class="fas fa-trash"></em> Remove Filter</button>
+<br/>
+<div class="card-container" *ngIf="showCategories">
+    <div class="card" [ngClass]="{'card-selected': selected==element, 'card-small':selected!==element }" (click)="selectCategory(element)" *ngFor="let element of categories" tabindex="0">
+      <span>{{element}}</span>
+    </div>
+  </div>

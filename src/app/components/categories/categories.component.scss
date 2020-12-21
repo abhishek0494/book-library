@@ -1,0 +1,43 @@
+svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+  .btn-primary {
+    color: #000000 !important;
+    border-color: lightgrey !important;
+    background-color: lightgrey !important;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.btn {
+    font-size: .775rem;
+    font-weight: 300;
+    line-height: 1;
+    display: inline-block;
+    padding: .500rem 1.0rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    color: #525f7f;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    background-color: transparent;
+}
+.card.card-selected {
+    height: 16px;
+    width: 100px;
+    font-size: 0.8em;
+    background-color: lightgrey;
+  }

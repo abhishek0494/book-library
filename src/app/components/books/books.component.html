@@ -1,0 +1,20 @@
+
+<div class="card-container row1">
+    <a class="card column" *ngFor="let book of books">
+        <div class="row">
+            <div class="col-avatar">
+              <img class="avatar" [src]="book.thumbnailUrl  ? book.thumbnailUrl : defaultUrl" alt="Image placeholder">
+            </div>
+            <div class="col authors">
+              <h5>{{book.title}}</h5>
+              <h5>Author- <span class="text-muted">{{book.authors}}</span></h5>
+              <span class="badge" [ngClass]="{'badge-success': book.count>3, 'badge-danger':book.count<=3 }">Available Copies- {{book.count}}</span>
+            </div>
+            
+          </div>
+          <p>
+            {{transformString(book.shortDescription)}}
+        </p>
+        <button (click)="removeBook(book.isbn)" class="btn btn-primary" style="float: right;">Remove</button>
+          </a>
+  </div>

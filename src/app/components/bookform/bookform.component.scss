@@ -1,0 +1,61 @@
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-control-label {
+    font-size: .675rem;
+    font-weight: 600;
+    color: #525f7f;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.form-control {
+    font-size: .775rem;
+    height: calc(1em + 1rem + 5px);
+    transition: all .15s ease-in-out;
+}
+
+.form-control {
+    font-size: .775rem;
+    font-weight: 400;
+    line-height: 1;
+    display: block;
+    width: 100%;
+    height: calc(1em + 1rem + 2px);
+    padding: .425rem .55rem;
+    transition: all .15s cubic-bezier(.68,-.55,.265,1.55);
+    color: #8898aa;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 3px 2px rgba(233,236,239,.05);
+}
+
+.btn-primary {
+    color: #fff !important;
+    border-color: #5e72e4 !important;
+    background-color: #5e72e4 !important;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.btn {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    display: inline-block;
+    padding: .625rem 1.25rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    color: #525f7f;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    background-color: transparent;
+}
