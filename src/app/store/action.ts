@@ -2,36 +2,6 @@ import { Action } from '@ngrx/store';//action is an interface
 import {Book} from './../models/book.model'
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export enum ActionTypes {
     Add = '[Book] Add new book',
     Remove = '[Book] Remove a book',
@@ -44,7 +14,11 @@ export enum ActionTypes {
     searchByStringSuccess = "searchByStringSuccess",
     searchByString = "searchByString",
     AddSuccess = "AddSuccess",
-    RemoveSuccess = "RemoveSuccess"
+    RemoveSuccess = "RemoveSuccess",
+    Edit = "Edit",
+    UpdateSuccess = "UpdateSuccess",
+    Update = "Update",
+    Cancel = "Cancel"
 }
 
 export class AddNewBook implements Action {
@@ -52,6 +26,14 @@ export class AddNewBook implements Action {
 
   constructor(public payload: Book) {}
 }
+export class EditBook implements Action {
+    readonly type = ActionTypes.Edit;
+  
+    constructor(public payload: Book) {}
+  }
+  export class CancelEdit implements Action {
+    readonly type = ActionTypes.Cancel;
+    }
 export class AddNewBookSuccess implements Action{
     readonly type = ActionTypes.AddSuccess;
     constructor(public payload: any) {}
@@ -102,4 +84,15 @@ export class SearchByStringSuccess implements Action{
     constructor(public payload: Book[]) {}
     
 }
-export type ActionsUnion = AddNewBook | RemoveBooks | LoadItems | GetBooks |GetCategories |LoadCategories | FilterByCategory | searchByCategorySuccess | FilterByString | SearchByStringSuccess |AddNewBookSuccess | RemoveBooksSuccess;
+export class UpdateBookDetail implements Action {
+    readonly type = ActionTypes.Update;
+  
+    constructor(public payload: Book) {}
+  }
+export class UpdateBookDetailSuccess implements Action{
+    readonly type = ActionTypes.UpdateSuccess;
+    constructor(public payload: any) {}
+    
+}
+export type ActionsUnion = AddNewBook | RemoveBooks | LoadItems | GetBooks |GetCategories |LoadCategories | FilterByCategory | searchByCategorySuccess | FilterByString | SearchByStringSuccess |AddNewBookSuccess | RemoveBooksSuccess | EditBook
+| UpdateBookDetail | UpdateBookDetailSuccess | CancelEdit;

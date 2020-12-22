@@ -15,6 +15,10 @@
           <p>
             {{transformString(book.shortDescription)}}
         </p>
-        <button (click)="removeBook(book.isbn)" class="btn btn-primary" style="float: right;">Remove</button>
+        <div style="width:44%;float:right">
+            <button  class="btn btn-danger" (click)="removeBook(book.isbn)" style="float: left;"><em class="fas fa-trash"></em> Remove</button>
+            <button (click)="editBook(book)"  class="btn btn-primary" style="float: right;"><em class="fas fa-edit"></em> Edit</button>
+        </div>
+       
           </a>
   </div>

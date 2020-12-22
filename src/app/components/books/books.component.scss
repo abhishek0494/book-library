@@ -35,13 +35,19 @@
     background-color: #5e72e4 !important;
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
+.btn-danger {
+    color: #fff !important;
+    border-color: #f5365c !important;
+    background-color: #f5365c !important;
+    box-shadow: 0 4px -6px rgba(50,50,93,.11), 0 1px -3px rgba(0,0,0,.08);
+}
 
 .btn {
     font-size: .675rem;
     font-weight: 300;
     line-height: 1.5;
     display: inline-block;
-    padding: .525rem 1.0rem;
+    padding: .55rem .800rem;
     cursor: pointer;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -51,7 +57,7 @@
     vertical-align: middle;
     color: #525f7f;
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 3%;
     background-color: transparent;
 }
 .justify-content-between {

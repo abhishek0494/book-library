@@ -13,21 +13,25 @@ import { BooksComponent } from './components/books/books.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookformComponent } from './components/bookform/bookform.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-import { HttpsInterceptor } from './service/http-interceptor.service'
+import { HttpsInterceptor } from './service/http-interceptor.service';
+import { AppRoutingModule } from './app-routing.module';
+import { EditbookComponent } from './components/editbook/editbook.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     BooksComponent,
     BookformComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    EditbookComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     StoreModule.forRoot({books: BookReducer}),
-    EffectsModule.forRoot([bookEffects])
+    EffectsModule.forRoot([bookEffects]),
+    AppRoutingModule
   ],
   providers: [BooksService,{
     provide: HTTP_INTERCEPTORS,

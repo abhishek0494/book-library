@@ -15,6 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get('/books', (req, res) => {
 let books=fs.readFileSync('./books1.json')
   res.json(JSON.parse(books))
@@ -66,6 +67,21 @@ app.post('/addbook',(req,res)=>{
     merged=merged.map(item=>item.toUpperCase())
     merged=merged.filter(onlyUnique);
     res.json({book:books,categories:merged})
+})
+app.post('/update/:id',(req,res)=>{
+    let books=JSON.parse(fs.readFileSync('./books1.json'))
+    let index=books.findIndex(x=>x.isbn==req.params.id)
+    if(index>-1){
+        books.splice(index,1,req.body.payload)
+        fs.writeFileSync('books1.json',JSON.stringify(books))
+        let categories=books.map(el=>el.categories)
+        var merged = [].concat.apply([], categories);
+        merged=merged.map(item=>item.toUpperCase())
+        merged=merged.filter(onlyUnique);
+        res.json({book:books,categories:merged})
+    }else{
+        res.status(404).end()
+    }
 })
 app.post('/remove/book/:id',(req,res)=>{
     let books=JSON.parse(fs.readFileSync('./books1.json'))

@@ -1,6 +1,6 @@
 <!-- Toolbar -->
 <app-navbar></app-navbar>
-<div class="" role="main">
+<div class="" role="main"  *ngIf="!isEditing">
   <div id="col-2">
     <div class="content">
       <app-bookform></app-bookform>
@@ -13,4 +13,7 @@
     </div>
   </div>
 </div> 
+<div class="content" *ngIf="isEditing">
+  <app-editbook></app-editbook>
+</div>
 

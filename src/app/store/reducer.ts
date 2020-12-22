@@ -14,7 +14,9 @@ export const initialState ={
     status:''
 }],
 categories:[],
-searchTerm:''};
+bookToEdit:{},
+isEditing:false
+};
 
 export function BookReducer(state = initialState, action: ActionsUnion) {
   console.log(action);
@@ -22,7 +24,9 @@ export function BookReducer(state = initialState, action: ActionsUnion) {
     case ActionTypes.LoadSuccess:
       return {
           ...state,
-          book:[...action.payload]
+          book:[...action.payload],
+          bookToEdit:{},
+          isEditing:false
         }
 
     case ActionTypes.AddSuccess:
@@ -31,7 +35,18 @@ export function BookReducer(state = initialState, action: ActionsUnion) {
           book:[...action.payload.book],
           categories:[...action.payload.categories]
         };
-
+    case ActionTypes.Edit:
+        return  {
+            ...state,
+            bookToEdit:action.payload,
+            isEditing:true
+        };
+        case ActionTypes.Edit:
+            return  {
+                ...state,
+                bookToEdit:{},
+                isEditing:false
+            };
     case ActionTypes.RemoveSuccess:
       return {
           ...state,
@@ -54,6 +69,14 @@ export function BookReducer(state = initialState, action: ActionsUnion) {
                 ...state,
                 book:[...action.payload],
         }
+    case ActionTypes.UpdateSuccess:
+        return {
+            ...state,
+            book:[...action.payload.book],
+            categories:[...action.payload.categories],
+            bookToEdit:{},
+            isEditing:false
+    }
     default:
       return state;
   }

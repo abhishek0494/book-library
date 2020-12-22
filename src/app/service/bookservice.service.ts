@@ -22,6 +22,9 @@ export class BooksService {
   addBook(bookObj){
     return this.http.post(`/addbook`,bookObj)
   }
+  updateBook(bookObj){
+    return this.http.post(`/update/${bookObj.payload.isbn}`,bookObj)
+  }
   removeBook(id){
     return this.http.post(`/remove/book/${id}`,{})
   }

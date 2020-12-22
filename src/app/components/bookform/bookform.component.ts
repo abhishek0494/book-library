@@ -8,13 +8,13 @@ import {AddNewBook} from './../../store/action'
   styleUrls: ['./bookform.component.scss']
 })
 export class BookformComponent implements OnInit {
-  bookForm = new FormGroup({
-    bookname: new FormControl(''),
-    author: new FormControl(''),
-    category: new FormControl(''),
-    copies: new FormControl(0),
-    bookdescription: new FormControl('')
-  });
+  bookForm= new FormGroup({
+    bookname: new FormControl('',Validators.required),
+    author: new FormControl('',Validators.required),
+    category: new FormControl('',Validators.required),
+    copies: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(100)]),
+    bookdescription: new FormControl('',Validators.required)
+  });;
   onReset(): void {
     this.bookForm.setValue({bookname: '', author: '',copies:0,bookdescription:'',category:'' });
   }

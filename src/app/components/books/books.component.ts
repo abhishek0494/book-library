@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select,Store } from '@ngrx/store';
 import {Book} from './../../models/book.model'
-import {GetBooks,RemoveBooks} from './../../store/action'
+import {GetBooks,RemoveBooks,EditBook} from './../../store/action'
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -28,6 +28,9 @@ export class BooksComponent implements OnInit {
    removeBook(id){
      this.store.dispatch(new RemoveBooks(id))
    }
+   editBook(book){
+    this.store.dispatch(new EditBook(book))   
+  }
   ngOnInit(): void {
     this.store.dispatch(new GetBooks());
   }

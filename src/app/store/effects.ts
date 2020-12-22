@@ -85,7 +85,18 @@ export class bookEffects {
       )
     )
   )
-
+  @Effect()
+  updateBook$ = this.actions$.pipe(
+    ofType(ActionTypes.Update),
+    mergeMap((category) =>
+      this.booksService.updateBook(category).pipe(
+        map(books => {
+          return { type: ActionTypes.UpdateSuccess, payload: books };
+        }),
+        catchError(() => EMPTY)
+      )
+    )
+  );
   constructor(
     private actions$: Actions,
     private booksService: BooksService
