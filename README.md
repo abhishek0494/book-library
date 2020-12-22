@@ -1,27 +1,46 @@
+
 # BookLibrary
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
+**Run The Client**
+ - Clone The repository.
+ - Install the dependencies using **npm install.**
+ - Go to project folder **(cd book-library).**
+ - Build the application using command **ng build --prod --aot**
+ - Run the application using **node startClient.js**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Run The Server**
+
+ - Run the server using **node server.js**
+
+**Note :- Client and server should run in two separate terminal from the project root directory.**
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Components (src/app/components)**
 
-## Build
+ - **books/books.component.ts**- This component contains the code for listing the books.
+ - **navbar/navbar.component.ts**- This component contains the code for **navbar and global search** . To search anything enter the search text and hit enter and to remove filter simply click on the cross icon.
+ - **bookform/bookform.component.ts**- This component contains the code for the form component to add new books.
+ - **categories/categories.component.ts**- This component contains the code to display the categories ad help user to filter based on categories.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Services(src/app/service)**
+**Http-interceptor service**- This service is used to add the base-url for the server endpoint.The server url is taken from **src/environment/environment and src/environment/environment** depending on the app running on development or production mode.
+**bookservice.service.ts**-This service contains the http api request to server to GET and POST data from server.
 
-## Running unit tests
+**Store(src/app/store)**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ - **Action:** This file contains the action interface.
+ - **Reducer**: This file contains the reducer code.
+ - **Effects**:This contains the code to new source of action to reduce state based on external api request.
 
-## Running end-to-end tests
+**Model(src/app/model)**
+ - **book.model.ts**- This contains the model of the book.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**src/startClient.js**
+This is the web server to serve the build angular files.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**src/server.js**
+This is where the node express server code is written along with the endpoints.
