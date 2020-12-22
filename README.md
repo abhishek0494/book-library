@@ -6,8 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 **Run The Client**
  - Clone The repository.
- - Install the dependencies using **npm install.**
  - Go to project folder **(cd book-library).**
+ - Install the dependencies using **npm install.**
  - Build the application using command **ng build --prod --aot**
  - Run the application using **node startClient.js**.
 
